@@ -1,6 +1,5 @@
 package ru.netology.authorization.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.netology.authorization.Authorities;
 import ru.netology.authorization.exception.InvalidCredentials;
@@ -12,9 +11,8 @@ import java.util.List;
 
 @Service
 public class AuthorizationService {
-    UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
     public AuthorizationService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
